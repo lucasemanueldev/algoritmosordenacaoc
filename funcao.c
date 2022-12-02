@@ -34,33 +34,10 @@ void merge(int *V, int inicio, int meio, int fim){
 
 void mergeSort(int *V, int inicio, int fim){
     int meio;
-    if(inicio < fim){                   //verifica se inicio é menor que o fim
-        meio = floor((inicio+fim)/2);   //divide ao meio
+    if(inicio < fim){                 //verifica se inicio é menor que o fim
+        meio = floor((inicio+fim)/2); //divide ao meio
         mergeSort(V,inicio,meio);      //CHAMA A FUNÇÃO PARA AS METADES
         mergeSort(V,meio+1,fim);       //CHAMA A FUNÇÃO PARA AS METADES
         merge(V,inicio,meio,fim); //JUNTA AS METADES DE FORMA ORDENADA
     }
-}
-
-int main(){
-    int i;     // 0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
-    int vet[15] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
-    int N = 15;
-
-
-    printf("\nSem ordenar:\n");
-    for(i=0; i<N; i++){
-        printf("%d ",vet[i]);
-    }
-
-    mergeSort(vet,0,N);
-    printf("\nOrdenado:\n");
-    for(i=0; i<N; i++){
-        printf("%d ",vet[i]);
-    }
-    
-    printf("\n");
-
-    system("pause");
-    return 0;
 }

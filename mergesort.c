@@ -33,8 +33,8 @@ void merge(int *V, int inicio, int meio, int fim){
 
 void mergeSort(int *V, int inicio, int fim){
     int meio;
-    if(inicio < fim){
-        meio = floor((inicio+fim)/2);
+    if(inicio < fim){ //verifica se inicio é menor que o fim
+        meio = floor((inicio+fim)/2); //divide ao meio
         mergeSort(V,inicio,meio);      //CHAMA A FUNÇÃO PARA AS METADES
         mergeSort(V,meio+1,fim);       //CHAMA A FUNÇÃO PARA AS METADES
         merge(V,inicio,meio,fim); //JUNTA AS METADES DE FORMA ORDENADA
